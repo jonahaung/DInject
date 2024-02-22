@@ -8,7 +8,7 @@
 import SwiftUI
 
 @propertyWrapper
-public struct StateDInjected<Value> {
+public final class StateDInjected<Value> {
     private let keyPath: KeyPath<DependencyLabel, Value.Type>?
     
     @State public var wrappedValue: Value
