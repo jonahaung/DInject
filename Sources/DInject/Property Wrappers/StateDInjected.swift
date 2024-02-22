@@ -8,14 +8,14 @@
 import SwiftUI
 
 @propertyWrapper
-struct StateDInjected<Value> {
+public struct StateDInjected<Value> {
     private let keyPath: KeyPath<DependencyLabel, Value.Type>?
-    @Environment(\.dependencies) private var dependencies
-    @State var wrappedValue: Value
     
-     init(_ keyPath: KeyPath<DependencyLabel, Value.Type>? = nil) {
+    @State public var wrappedValue: Value
+    
+     public init(_ keyPath: KeyPath<DependencyLabel, Value.Type>? = nil) {
         self.keyPath = keyPath
-        
+        @Environment(\.dependencies) private var dependencies
         
         guard let service: Value = dependencies.resolve(for: keyPath) else {
             fatalError("Service \(Value.self) not registered! See logs for more information")
