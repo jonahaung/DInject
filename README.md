@@ -3,12 +3,12 @@
 SwiftUIDI is a dependency injection framework. It includes a propertyWrapper to easily get dependencies in your objects.
 
 ## Swift Package Manager
-`https://github.com/TomVanDerSpek/SwiftUI-Dependency-Injection`
+`https://github.com/jonahaung/DInjectn`
 
 ## Setup
 
 ```swift
-import SwiftUIDI
+import DInject
 ```
 
 ### Register a dependency
